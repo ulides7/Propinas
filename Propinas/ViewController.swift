@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var Cerebrobro: () = Cerebro()
+    var Cerebrobro = Cerebro()
 
     @IBOutlet weak var totallbl: UITextField!
     
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 
     @IBAction func calcularbtn(_ sender: UIButton) {
         
-        Cerebrobro.calculartotal(precio: precio, propina: propina)
+        Cerebrobro.calcularTotal(precio: precio, propina: propina)
        
         performSegue(withIdentifier: "calcular", sender: nil)
     }
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "calcular" {
             let destino = segue.destination as! Resultado
-            destino.Valor = Cerebrobro.retornarValor()
+            destino.Valorl = Cerebrobro.retornarValor()
             destino.imagen = Cerebrobro.retornarImg()
             
         }

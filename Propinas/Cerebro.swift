@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-func Cerebro() {
+struct Cerebro {
     var imc: Valores?
 
     

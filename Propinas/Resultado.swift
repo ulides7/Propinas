@@ -8,8 +8,12 @@
 import UIKit
 
 class Resultado: UIViewController {
-    var Valor: String?
+    var Valorl: String?
     var imagen: UIImage?
+    
+    @IBOutlet weak var resultado: UILabel!
+    @IBOutlet weak var imagenview: UIImageView!
+    
     
     
     
@@ -17,6 +21,9 @@ class Resultado: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+       
+        resultado.text = Valorl
+        imagenview.image = imagen
     }
     
 
