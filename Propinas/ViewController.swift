@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        totallbl.text = "$ \(Slider.value)"
+        cantidadtxt.text = "$ \(Slider.value)"
        
         
     }
@@ -43,18 +43,20 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "calcular" {
             let destino = segue.destination as! Resultado
-            destino.Valorl = Cerebrobro.retornarValor()
+            destino.valor = Cerebrobro.retornarValor()
             destino.imagen = Cerebrobro.retornarImg()
             
         }
     }
     
-    @IBAction func pesoSliderAccion(_ sender: UISlider) {
+    @IBAction func propinaSliderAccion(_ sender: UISlider) {
         print(sender.value)
         //mostrar en el label el valor del slider
         
         //var balance = String(format: "%.2f", balanceNumber)
-        totallbl.text = "\(String(format: "%.1f", sender.value))  Kg."
+        Slider.minimumValue = 1;
+        Slider.maximumValue = 100;
+        cantidadtxt.text = "\(String(format: "%.1f", sender.value))"
         
     }
     
