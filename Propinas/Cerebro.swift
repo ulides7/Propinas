@@ -14,26 +14,37 @@ func Cerebro() {
 
     
 
-    func calculartotal(precio: Float, propina: Float){
+    mutating func calcularTotal(precio: Float, propina: Float){
       
         let precio = precio
         let propina = propina
       //  let imagen = UIImage
     
-        let valor = (precio * propina)
+        let valor = (precio * propina/100)
         
         
-        
+        if propina < 6{
       
        
         imc = Valores (Valor: valor, imagen: UIImage(named: "1"))
-           
+        } else if propina < 11{
+            imc = Valores (Valor: valor, imagen: UIImage(named: "2"))
+            
+        } else if propina < 16 {
+            imc = Valores (Valor: valor, imagen: UIImage(named: "3"))
+        }
+        
+        
+        
+        
         print(valor)
     }
+    
+    
       
     func retornarValor() -> String {
-        let imcCon1Decimal = String(format: "%.1f", imc?.Valor ?? 0.0)
-        return imcCon1Decimal
+        let valor = String(format: "%.1f", imc?.Valor ?? 0.0)
+        return valor
     }
    
     
